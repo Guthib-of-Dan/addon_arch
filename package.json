@@ -1,0 +1,18 @@
+{
+  "name": "addon",
+  "scripts": {
+    "cxx:fetch": "node-gyp install && node setup-cmake.mjs",
+    "cxx:conf": "cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Release",
+    "cxx:build": "cmake --build build"
+  },
+  "dependencies": {
+    "node-addon-api": "^8.7.0",
+    "node-gyp": "^12.2.0"
+  },
+  "config": {
+    "node_gyp_devdir": "cxx_modules/node"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.0"
+  }
+}
